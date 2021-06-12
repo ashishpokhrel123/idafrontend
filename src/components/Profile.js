@@ -33,7 +33,8 @@ function Profile(props) {
     "phone":"",
     "address":"",
     'token': { 'Authorization': `Bearer ${localStorage.getItem('token')}` },
-     successMessage: null
+     successMessage: null,
+     loggedIn : ""
   })
   const history = useHistory();
   const [loading, setLoading] = React.useState(true);
@@ -49,11 +50,6 @@ function Profile(props) {
     
   };
 
-  const wrapperfunction = () => {
-      loginWithRedirect();
-      handleLogout();
-  }
-
   const handleChangeProfile = (e) => {
       const{id, value} = e.target
       setState(prevState => ({
@@ -62,6 +58,15 @@ function Profile(props) {
       }))
 
   }
+
+  const logout = () => {
+        
+        localStorage.removeItem('token');
+        props.history.push('/');
+  }
+
+ 
+
    /* fteching user details */
   const fetchUser = async () => {
         const response = await axios
@@ -112,7 +117,7 @@ function Profile(props) {
                     'successMessage' : 'User profile Update succesfully.'
 
                   }))
-                redirectToHome();
+                //   redirectToHome();
                  
                     } 
                 
@@ -125,22 +130,8 @@ function Profile(props) {
        
   
 
-  const redirectToHome = () => {
-      props.history.push('/profile');
-    }
-
-    const handleLogout = () => {
-            
-            localStorage.removeItem('token');
-            localStorage.clear();
-            if(localStorage.getItem('token') == null){
-                this.props.history.push('/');
-
-            }
-            
-          }
-
-
+ 
+  
 
 
     return (

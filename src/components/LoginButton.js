@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Link, useHistory, withRouter } from "react-router-dom";
 
 import {useAuth0} from '@auth0/auth0-react';
@@ -10,7 +10,12 @@ import {
   Label
 } from 'reactstrap';
 const LoginButton = (props) => {
-    const { loginWithRedirect, isAuthenticated } = useAuth0();
+     const [state , setState] = useState({
+        email : "",
+        picture : "",
+        successMessage: null
+    })
+    const { loginWithRedirect, isAuthenticated, user } = useAuth0();
 
     
     return (

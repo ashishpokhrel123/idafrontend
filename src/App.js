@@ -12,8 +12,8 @@ function App() {
   return (
      <BrowserRouter>
       <Switch>
-        <Route exact path='/' component={LoginButton} />
-        <Route exact path='/register' component={SignUpButton} />
+        <Route exact path='/login' component={LoginButton} />
+        <Route exact path='/' component={SignUpButton} />
         <PrivateRoute exact path ='/profile' component={Profile} />
         </Switch>
         </BrowserRouter>
