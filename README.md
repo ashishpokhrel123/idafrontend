@@ -7,6 +7,7 @@
    1. User can login, signup from Auth0.
    2. User data is  saved to mongodb.
    3. User can view and Update his profile.
+   4. User can direct login after signup.
    
    
  # For Auth0
