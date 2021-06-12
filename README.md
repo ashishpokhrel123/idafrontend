@@ -1,3 +1,13 @@
+# tech used:
+  1. React js
+  2. Auth0 for Authencation
+  3. JWT token
+  
+ # features:
+   1. User can login, signup from Auth0.
+   2. User data is  saved to mongodb.
+   3. User can view and Update his profile.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
